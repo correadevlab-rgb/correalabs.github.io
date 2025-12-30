@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Correa Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Correa Labs – Modern app & game development studio." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #6366f1;
+      --accent2: #22d3ee;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+
+    header {
+      padding: 120px 20px 90px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px 80px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px rgba(0,0,0,.45);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+
+    .muted { color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    a {
+      color: var(--accent2);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+  <h1>Correa Labs</h1>
+  <p>Modern app & game development studio</p>
+</header>
+
+<section class="container">
+  <div class="grid">
+
+    <div class="card">
+      <h2>About</h2>
+      <p class="muted">
+        Correa Labs is an independent studio focused on building clean,
+        efficient and offline-first mobile applications and games.
+        We value simplicity, performance and user privacy.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Apps & Games</h2>
+      <p><strong>🎮 Tic Tac Toe – Offline</strong></p>
+      <p class="muted">
+        A classic board game for two players.
+        Simple, lightweight and works fully offline.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Privacy</h2>
+      <p class="muted">
+        No data collection. No ads. No analytics.
+        All data stays on the user’s device.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p class="muted">
+        <a href="mailto:contato@correalabs.com.br">
+          contato@correalabs.com.br
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Correa Labs — Technology with simplicity & privacy
+</footer>
+
+<script>
+  const canvas = document.getElementById('bg');
+  const ctx = canvas.getContext('2d');
+
+  let w, h;
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const particles = Array.from({ length: 80 }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.6,
+    vy: (Math.random() - 0.5) * 0.6
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = '#60a5fa';
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x;
+        const dy = p.y - q.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 120) {
+          ctx.strokeStyle = 'rgba(96,165,250,' + (1 - dist / 120) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+</body>
+</html>
