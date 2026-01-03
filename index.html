@@ -1,221 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Correa Labs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Correa Labs – Modern app & game development studio." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Política de Privacidade — Tuner Pro</title>
   <style>
-    :root {
-      --bg: #0b0f1a;
-      --card: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.15);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #6366f1;
-      --accent2: #22d3ee;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    canvas {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-    }
-
-    header {
-      padding: 120px 20px 90px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3.4rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    header p {
-      margin-top: 16px;
-      font-size: 1.1rem;
-      color: var(--muted);
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px 80px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 26px;
-    }
-
-    .card {
-      background: var(--card);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 50px rgba(0,0,0,.45);
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 14px;
-    }
-
-    .muted { color: var(--muted); }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    a {
-      color: var(--accent2);
-      text-decoration: none;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    @media (max-width: 480px) {
-      header h1 { font-size: 2.5rem; }
-    }
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; margin: 24px; max-width: 900px; }
+    h1,h2 { line-height: 1.2; }
+    code { background: rgba(127,127,127,.12); padding: 2px 6px; border-radius: 6px; }
+    .muted { opacity: .8; }
+    ul { padding-left: 20px; }
   </style>
 </head>
 <body>
+  <h1>Política de Privacidade — Tuner Pro</h1>
+  <p class="muted"><strong>Data de vigência:</strong> 03/01/2026</p>
 
-<canvas id="bg"></canvas>
+  <p>
+    Esta Política de Privacidade descreve como o aplicativo <strong>Tuner Pro</strong> (“Aplicativo”)
+    trata informações ao ser utilizado. Ao usar o Aplicativo, você concorda com as práticas descritas aqui.
+  </p>
 
-<header>
-  <h1>Correa Labs</h1>
-  <p>Modern app & game development studio</p>
-</header>
+  <h2>1) Quem somos</h2>
+  <p>
+    O Aplicativo é disponibilizado por <strong>Correa Labs</strong> (“nós”).
+  </p>
 
-<section class="container">
-  <div class="grid">
+  <h2>2) Resumo (em linguagem simples)</h2>
+  <ul>
+    <li>O Aplicativo precisa de acesso ao <strong>microfone</strong> para detectar notas e afinação.</li>
+    <li>O áudio é usado para <strong>processamento de afinação no dispositivo</strong>. Nós não gravamos nem enviamos o áudio para nossos servidores.</li>
+    <li>O Aplicativo exibe <strong>anúncios</strong> por meio do <strong>Google AdMob</strong>, que pode coletar dados para entregar e medir anúncios.</li>
+  </ul>
 
-    <div class="card">
-      <h2>About</h2>
-      <p class="muted">
-        Correa Labs is an independent studio focused on building clean,
-        efficient and offline-first mobile applications and games.
-        We value simplicity, performance and user privacy.
-      </p>
-    </div>
+  <h2>3) Permissões do dispositivo</h2>
+  <p>
+    O Aplicativo solicita a permissão:
+  </p>
+  <ul>
+    <li><strong>Microfone</strong> (<code>RECORD_AUDIO</code>): necessária para captar o som e calcular frequência/nota/cents em tempo real.</li>
+  </ul>
+  <p>
+    Se você negar a permissão do microfone, o Aplicativo pode ficar limitado (sem detecção de áudio).
+  </p>
 
-    <div class="card">
-      <h2>Apps & Games</h2>
-      <p><strong>🎮 Tic Tac Toe – Offline</strong></p>
-      <p class="muted">
-        A classic board game for two players.
-        Simple, lightweight and works fully offline.
-      </p>
-    </div>
+  <h2>4) Dados que coletamos</h2>
+  <p><strong>4.1 Dados coletados por nós</strong></p>
+  <p>
+    Em regra, <strong>não coletamos</strong> dados pessoais diretamente (como nome, e-mail, CPF) e
+    <strong>não mantemos servidor</strong> para receber seus dados de afinação.
+  </p>
 
-    <div class="card">
-      <h2>Privacy</h2>
-      <p class="muted">
-        No data collection. No ads. No analytics.
-        All data stays on the user’s device.
-      </p>
-    </div>
+  <p><strong>4.2 Dados coletados por terceiros (anúncios/medição)</strong></p>
+  <p>
+    O Aplicativo utiliza o <strong>Google AdMob</strong> (Google) para exibir anúncios.
+    O AdMob pode coletar e processar informações automaticamente para fins de publicidade e medição,
+    conforme as políticas do Google.
+  </p>
+  <p>
+    Exemplos de dados que <em>podem</em> ser coletados pelo AdMob (variando por região, configurações do dispositivo,
+    consentimento e políticas aplicáveis):
+  </p>
+  <ul>
+    <li>Identificadores do dispositivo (por exemplo, <strong>ID de publicidade</strong> do Android).</li>
+    <li>Informações aproximadas sobre o dispositivo (modelo, versão do Android, idioma).</li>
+    <li>Endereço IP (geralmente para segurança, detecção de fraude e/ou localização aproximada).</li>
+    <li>Eventos de performance e medição de anúncios (impressões, cliques, diagnósticos).</li>
+  </ul>
 
-    <div class="card">
-      <h2>Contact</h2>
-      <p class="muted">
-        <a href="mailto:contato@correalabs.com.br">
-          contato@correalabs.com.br
-        </a>
-      </p>
-    </div>
+  <h2>5) Como usamos os dados</h2>
+  <ul>
+    <li>Para <strong>funcionamento do afinador</strong> (processar sinal do microfone e exibir a afinação).</li>
+    <li>Para <strong>exibir e medir anúncios</strong> por meio do AdMob (terceiro).</li>
+    <li>Para <strong>segurança</strong> e prevenção de fraude relacionada a anúncios (feito principalmente pelo provedor de anúncios).</li>
+  </ul>
 
-  </div>
-</section>
+  <h2>6) Áudio do microfone</h2>
+  <p>
+    O áudio captado pelo microfone é utilizado para análise de frequência e afinação.
+    <strong>Não armazenamos gravações</strong> e <strong>não enviamos o áudio</strong> para servidores controlados por nós.
+  </p>
 
-<footer>
-  © 2025 Correa Labs — Technology with simplicity & privacy
-</footer>
+  <h2>7) Compartilhamento de dados</h2>
+  <p>
+    Podemos compartilhar dados apenas nos seguintes casos:
+  </p>
+  <ul>
+    <li><strong>Provedores de serviço</strong>: Google AdMob para anúncios e medição, conforme as políticas do Google.</li>
+    <li><strong>Obrigação legal</strong>: se exigido por lei, ordem judicial ou autoridade competente.</li>
+    <li><strong>Proteção</strong>: para investigar ou prevenir fraude, abuso ou problemas de segurança.</li>
+  </ul>
 
-<script>
-  const canvas = document.getElementById('bg');
-  const ctx = canvas.getContext('2d');
+  <h2>8) Base legal e consentimento (quando aplicável)</h2>
+  <p>
+    Em alguns países/regiões, o fornecimento de anúncios personalizados pode exigir consentimento.
+    Quando aplicável, o provedor de anúncios pode solicitar ou gerenciar esse consentimento conforme exigências locais.
+  </p>
 
-  let w, h;
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
+  <h2>9) Seus controles e escolhas</h2>
+  <ul>
+    <li><strong>Permissão do microfone</strong>: você pode conceder/revogar nas Configurações do Android.</li>
+    <li><strong>Anúncios</strong>: você pode limitar personalização de anúncios nas Configurações do Google/Android (por exemplo, redefinir o ID de publicidade).</li>
+  </ul>
 
-  const particles = Array.from({ length: 80 }, () => ({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    vx: (Math.random() - 0.5) * 0.6,
-    vy: (Math.random() - 0.5) * 0.6
-  }));
+  <h2>10) Retenção e armazenamento</h2>
+  <p>
+    Nós não armazenamos dados de áudio do microfone. Dados relacionados a anúncios e medição podem ser armazenados
+    pelos serviços do Google conforme as políticas deles.
+  </p>
 
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
+  <h2>11) Privacidade de crianças</h2>
+  <p>
+    O Aplicativo não é direcionado a crianças. Se você acredita que uma criança nos forneceu dados pessoais,
+    entre em contato para que possamos orientar as medidas apropriadas.
+  </p>
 
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      p.x += p.vx;
-      p.y += p.vy;
+  <h2>12) Links e serviços de terceiros</h2>
+  <p>
+    O Aplicativo pode incluir serviços de terceiros (como o AdMob). O tratamento de dados por esses terceiros
+    é regido por suas próprias políticas.
+  </p>
 
-      if (p.x < 0 || p.x > w) p.vx *= -1;
-      if (p.y < 0 || p.y > h) p.vy *= -1;
+  <h2>13) Alterações nesta política</h2>
+  <p>
+    Podemos atualizar esta Política de Privacidade periodicamente. Quando fizermos mudanças relevantes, atualizaremos
+    a data de vigência nesta página.
+  </p>
 
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = '#60a5fa';
-      ctx.fill();
+  <h2>14) Contato</h2>
+  <p>
+    Se você tiver dúvidas sobre esta Política de Privacidade, você pode entrar em contato pelo canal de suporte
+    disponibilizado na página do Aplicativo na Google Play.
+  </p>
 
-      for (let j = i + 1; j < particles.length; j++) {
-        const q = particles[j];
-        const dx = p.x - q.x;
-        const dy = p.y - q.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 120) {
-          ctx.strokeStyle = 'rgba(96,165,250,' + (1 - dist / 120) + ')';
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-</script>
-
+  <hr />
+  <p class="muted">
+    Referências úteis (terceiros): Política de Privacidade do Google e informações do Google AdMob podem ser consultadas
+    nos sites oficiais do Google.
+  </p>
 </body>
 </html>
